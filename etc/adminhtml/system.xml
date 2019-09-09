@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="altoshift" translate="label" sortOrder="200">
+            <label>Altoshift</label>
+        </tab>
+        <section id="altoshift_settings" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>altoshift-separator</class>
+            <label>Settings</label>
+            <tab>altoshift</tab>
+            <resource>Altoshift_Magento::altoshift_settings</resource>
+			<group id="layer" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Layer settings</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Layer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="script" type="textarea" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Altoshift Script</label>
+                    <!-- <validate>required-entry</validate> -->
+                    <tooltip>Altoshift Layer</tooltip>
+                </field>
+            </group>
+			<group id="feed" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Altoshift Feed</label>
+                <field id="url" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Feed Url</label>
+                    <comment><model>Altoshift\Magento\Model\Feed</model></comment>
+                </field>
+                <field id="password_enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Password</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="password" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Password</label>
+                    <comment>Set the password to encrypt your feed</comment>
+                </field>
+            </group>
+			<group id="analytic" translate="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Analytic Settings</label>
+                <field id="send_checkout_stats" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send Checkout Stats</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+			<group id="setting" translate="label" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Altoshift Settings</label>
+                 <field id="engine_token" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Engine Token</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
